@@ -22,7 +22,7 @@ export default function ParticlesBg() {
       options={{
         background: {
           color: {
-            value: "#0b0f2a",
+            value: "transparent",
           },
         },
         fpsLimit: 60,
