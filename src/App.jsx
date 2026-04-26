@@ -223,6 +223,244 @@ function App() {
             ))}
           </div>
         </div>
+        {/* ── WHY US ── */}
+<div className="relative bg-white py-20 px-6 overflow-hidden">
+  
+  {/* Organic blobs background */}
+  <div 
+    className="absolute w-[800px] h-[800px] -top-[300px] -left-[200px] opacity-40 blur-3xl"
+    style={{
+      background: 'radial-gradient(circle, rgba(79,110,247,0.08) 0%, transparent 70%)',
+      borderRadius: '43% 57% 38% 62% / 48% 35% 65% 52%',
+      animation: 'morph 20s ease-in-out infinite'
+    }}
+  />
+  <div 
+    className="absolute w-[600px] h-[600px] -bottom-[200px] -right-[150px] opacity-40 blur-3xl"
+    style={{
+      background: 'radial-gradient(circle, rgba(167,139,250,0.08) 0%, transparent 70%)',
+      borderRadius: '57% 43% 62% 38% / 35% 65% 35% 65%',
+      animation: 'morph 25s ease-in-out infinite reverse'
+    }}
+  />
+
+  <div className="max-w-6xl mx-auto relative z-10">
+    
+    {/* Header */}
+    <div className="text-center mb-16">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 rounded-full px-4 py-1.5 text-xs font-semibold text-blue-600 mb-4"
+      >
+        <span className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse" />
+        WHY CHOOSE NEXVOYA
+      </motion.div>
+      
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.1 }}
+        className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-3"
+        style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+      >
+        Built on trust, driven by results
+      </motion.h2>
+      
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.2 }}
+        className="text-slate-500 text-base max-w-xl mx-auto leading-relaxed"
+      >
+        We're not just developers — we're your growth partners. Here's what sets us apart in the global tech landscape.
+      </motion.p>
+    </div>
+
+    {/* Stats Grid */}
+    <div className="grid md:grid-cols-2 gap-6">
+      {[
+        { icon: "✓", num: "500+", label: "Projects delivered across 40+ countries", color: "from-blue-100 to-blue-200", iconColor: "text-blue-700" },
+        { icon: "👥", num: "1200+", label: "Developers in our global talent network", color: "from-purple-100 to-purple-200", iconColor: "text-purple-700" },
+        { icon: "😊", num: "98%", label: "Client satisfaction & retention rate", color: "from-yellow-100 to-yellow-200", iconColor: "text-yellow-800" },
+        { icon: "⚡", num: "48hr", label: "Average time to match & onboard talent", color: "from-green-100 to-green-200", iconColor: "text-green-700" },
+      ].map((stat, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: i * 0.1 }}
+          whileHover={{ y: -6, boxShadow: "0 20px 50px rgba(79,110,247,0.12)" }}
+          className="relative bg-white border border-slate-100 rounded-2xl p-9 group overflow-hidden transition-all duration-300"
+        >
+          {/* Glow effect on hover */}
+          <div className="absolute top-0 right-0 w-36 h-36 bg-blue-500/5 rounded-full -translate-y-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl" />
+          
+          {/* Icon */}
+          <div className={`w-12 h-12 bg-gradient-to-br ${stat.color} ${stat.iconColor} rounded-xl flex items-center justify-center text-2xl mb-5 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300`}>
+            {stat.icon}
+          </div>
+          
+          {/* Number */}
+          <div className="text-5xl md:text-6xl font-bold text-slate-900 mb-2 tracking-tight" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+            <span className="bg-gradient-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent">
+              {stat.num}
+            </span>
+          </div>
+          
+          {/* Label */}
+          <div className="text-slate-500 text-sm font-medium leading-relaxed">
+            {stat.label}
+          </div>
+
+          {/* Bottom line decoration */}
+          <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-blue-200 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+        </motion.div>
+      ))}
+    </div>
+
+  </div>
+
+  <style>{`
+    @keyframes morph {
+      0%, 100% { border-radius: 43% 57% 38% 62% / 48% 35% 65% 52%; }
+      50% { border-radius: 57% 43% 62% 38% / 62% 48% 52% 38%; }
+    }
+  `}</style>
+</div>
+{/* ── BLOG SECTION ── */}
+<div className="relative bg-gray-50 py-20 px-6 overflow-hidden">
+  
+  {/* Subtle gradient */}
+  <div className="absolute w-full h-96 bg-gradient-to-b from-transparent to-gray-100/60 bottom-0 left-0 pointer-events-none" />
+
+  <div className="max-w-6xl mx-auto relative z-10">
+    
+    {/* Header */}
+    <div className="text-center mb-14">
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-sm font-semibold tracking-widest text-slate-500 mb-3 uppercase"
+      >
+        Insights & Resources
+      </motion.p>
+      
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.1 }}
+        className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight"
+        style={{ fontFamily: 'serif' }}
+      >
+        Latest from the blog
+      </motion.h2>
+      
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.2 }}
+        className="text-slate-500 max-w-xl mx-auto leading-relaxed"
+      >
+        Deep dives, practical guides, and real-world case studies from our engineering team and industry experts.
+      </motion.p>
+    </div>
+
+    {/* Blog Grid */}
+    <div className="grid md:grid-cols-3 gap-7 mb-12">
+      {[
+        {
+          icon: "🤖",
+          tag: "AI Development",
+          tagColor: "bg-blue-100 text-blue-700",
+          gradientBg: "from-blue-100 to-indigo-100",
+          title: "Building Production-Ready AI Apps: Lessons from 50+ Deployments",
+          excerpt: "From prototype to scale — learn how we helped startups ship AI features that handle millions of requests without breaking the bank.",
+          date: "Apr 18, 2026",
+          readTime: "8 min read"
+        },
+        {
+          icon: "⚡",
+          tag: "Performance",
+          tagColor: "bg-yellow-100 text-yellow-800",
+          gradientBg: "from-yellow-100 to-pink-100",
+          title: "How We Cut API Response Time by 73% Using Edge Computing",
+          excerpt: "A technical breakdown of migrating a fintech app to edge functions — and the surprising cost savings that came with it.",
+          date: "Apr 12, 2026",
+          readTime: "6 min read"
+        },
+        {
+          icon: "🚀",
+          tag: "Startup Playbook",
+          tagColor: "bg-green-100 text-green-700",
+          gradientBg: "from-green-100 to-cyan-100",
+          title: "MVP to Series A: The Tech Stack Decisions That Actually Mattered",
+          excerpt: "We tracked 30 startups from MVP to funding. Here's what they wish they knew about choosing tech early on.",
+          date: "Apr 5, 2026",
+          readTime: "10 min read"
+        },
+      ].map((post, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: i * 0.1 }}
+          whileHover={{ y: -8, boxShadow: "0 24px 56px rgba(15,23,42,0.1)" }}
+          className="bg-white border border-gray-200 rounded-2xl overflow-hidden flex flex-col cursor-pointer group transition-all duration-300"
+        >
+          {/* Thumbnail */}
+          <div className={`h-48 bg-gradient-to-br ${post.gradientBg} relative overflow-hidden`}>
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 mix-blend-multiply" />
+            <div className="absolute bottom-4 right-4 w-14 h-14 bg-white/90 backdrop-blur rounded-xl flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-300">
+              {post.icon}
+            </div>
+          </div>
+
+          {/* Content */}
+          <div className="p-6 flex-1 flex flex-direction-column">
+            <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${post.tagColor} inline-block mb-3 uppercase tracking-wide`}>
+              {post.tag}
+            </span>
+            <h3 className="font-bold text-slate-900 text-base mb-3 leading-snug line-clamp-2">
+              {post.title}
+            </h3>
+            <p className="text-sm text-slate-500 leading-relaxed mb-auto line-clamp-3">
+              {post.excerpt}
+            </p>
+            
+            {/* Meta */}
+            <div className="flex justify-between items-center mt-5 pt-4 border-t border-gray-100 text-xs text-slate-400">
+              <span className="font-medium">{post.date}</span>
+              <span className="flex items-center gap-1">📖 {post.readTime}</span>
+            </div>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+
+    {/* CTA Button */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center"
+    >
+      <button className="group inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3.5 rounded-xl shadow-lg shadow-blue-200 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-300">
+        View All Articles
+        <span className="group-hover:translate-x-1 transition-transform text-lg">→</span>
+      </button>
+    </motion.div>
+
+  </div>
+</div>
 
         {/* ── CTA ── */}
         <div className="mt-24 mx-6 mb-2 rounded-3xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-center py-16 px-6 relative overflow-hidden">
