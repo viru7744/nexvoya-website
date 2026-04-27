@@ -462,32 +462,170 @@ function App() {
   </div>
 </div>
 
-        {/* ── CTA ── */}
-        <div className="mt-24 mx-6 mb-2 rounded-3xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-center py-16 px-6 relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10"
-            style={{backgroundImage:"radial-gradient(circle at 20% 50%,#fff 1px,transparent 1px),radial-gradient(circle at 80% 50%,#fff 1px,transparent 1px)",backgroundSize:"30px 30px"}}
-          />
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <p className="text-blue-200 text-sm font-semibold tracking-widest mb-3">READY TO SCALE?</p>
-            <h2 className="text-3xl md:text-4xl font-black">Get Started Today</h2>
-            <p className="text-blue-100 mt-3 text-base max-w-md mx-auto">
-              Talk to our experts and get your dedicated team in 48 hours.
-            </p>
-            <div className="mt-7 flex justify-center gap-4 flex-wrap">
-              <button className="bg-white text-blue-700 font-semibold px-7 py-3 rounded-xl hover:bg-blue-50 transition shadow-lg">
-                Contact Us →
-              </button>
-              <button className="border-2 border-white/40 text-white font-semibold px-7 py-3 rounded-xl hover:bg-white/10 transition">
-                View Case Studies
-              </button>
-            </div>
-          </motion.div>
+       {/* ── CONTACT SECTION ── */}
+<div className="relative bg-gray-50 py-20 px-6 overflow-hidden">
+  
+  {/* Animated gradient orbs */}
+  <div 
+    className="absolute w-[500px] h-[500px] -top-24 -left-24 rounded-full opacity-60 blur-3xl"
+    style={{
+      background: 'radial-gradient(circle, rgba(79,110,247,0.08), transparent 70%)',
+      animation: 'float 20s ease-in-out infinite'
+    }}
+  />
+  <div 
+    className="absolute w-[400px] h-[400px] -bottom-12 -right-12 rounded-full opacity-60 blur-3xl"
+    style={{
+      background: 'radial-gradient(circle, rgba(167,139,250,0.06), transparent 70%)',
+      animation: 'float 25s ease-in-out infinite reverse'
+    }}
+  />
+
+  <div className="max-w-6xl mx-auto relative z-10">
+    
+    {/* Header */}
+    <div className="text-center mb-14">
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-xs font-semibold tracking-widest text-blue-600 mb-3 uppercase"
+      >
+        Ready to Build?
+      </motion.p>
+      
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.1 }}
+        className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-3 tracking-tight"
+      >
+        Let's Talk About Your Project
+      </motion.h2>
+      
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.2 }}
+        className="text-slate-500 max-w-lg mx-auto leading-relaxed"
+      >
+        Share your vision with us. We'll turn it into a roadmap, timeline, and dedicated team — all within 48 hours.
+      </motion.p>
+    </div>
+
+    {/* Split Layout */}
+    <div className="grid md:grid-cols-2 gap-12 items-start">
+      
+      {/* LEFT - CTA */}
+      <motion.div
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <h3 className="text-3xl font-bold text-slate-900 mb-4 leading-tight">
+          Let's build something amazing together
+        </h3>
+        <p className="text-slate-500 leading-relaxed mb-7">
+          Whether you need a single developer or a full product team, we're here to help you scale fast without compromising quality.
+        </p>
+        
+        <button className="group inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-7 py-3.5 rounded-xl shadow-lg shadow-blue-200 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-300 mb-9">
+          Book Free Consultation
+          <span className="group-hover:translate-x-1 transition-transform text-lg">→</span>
+        </button>
+
+        {/* Steps */}
+        <ul className="space-y-4">
+          {[
+            { num: "01", text: "Share your app idea or project requirements with us" },
+            { num: "02", text: "Get a free project assessment and cost estimate" },
+            { num: "03", text: "Receive a tailored development plan and team proposal" },
+          ].map((step, i) => (
+            <motion.li
+              key={i}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="flex items-start gap-4"
+            >
+              <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-lg flex items-center justify-center text-sm font-bold text-blue-700">
+                {step.num}
+              </div>
+              <p className="text-slate-600 font-medium leading-relaxed pt-0.5">
+                {step.text}
+              </p>
+            </motion.li>
+          ))}
+        </ul>
+      </motion.div>
+
+      {/* RIGHT - Contact Card */}
+      <motion.div
+        initial={{ opacity: 0, x: 30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg"
+      >
+        <h3 className="text-xl font-bold text-slate-900 mb-6">Get in Touch</h3>
+        
+        {/* Contact Items */}
+        <ul className="space-y-0 divide-y divide-gray-100">
+          {[
+            { icon: "💬", label: "WhatsApp", value: "+91 9754352051", link: "https://wa.me/919754352051", gradient: "from-green-100 to-emerald-100", iconColor: "text-green-700" },
+            { icon: "📞", label: "Phone", value: "+91 9754352051", link: "tel:+919754352051", gradient: "from-blue-100 to-cyan-100", iconColor: "text-blue-700" },
+            { icon: "✉️", label: "Email", value: "hello@nexvoya.com", link: "mailto:hello@nexvoya.com", gradient: "from-yellow-100 to-orange-100", iconColor: "text-yellow-800" },
+            { icon: "🌍", label: "Address", value: "Working remotely worldwide", link: null, gradient: "from-purple-100 to-pink-100", iconColor: "text-purple-700" },
+          ].map((item, i) => (
+            <li key={i} className="flex items-start gap-4 py-4 group">
+              <div className={`flex-shrink-0 w-11 h-11 bg-gradient-to-br ${item.gradient} ${item.iconColor} rounded-xl flex items-center justify-center text-xl group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300`}>
+                {item.icon}
+              </div>
+              <div className="flex-1">
+                <p className="text-xs font-semibold text-slate-500 mb-1 uppercase tracking-wide">
+                  {item.label}
+                </p>
+                {item.link ? (
+  <a
+    href={item.link}
+    className="text-sm font-medium text-slate-900 hover:text-blue-600 transition-colors"
+  >
+    {item.value}
+  </a>
+) : (
+  <p className="text-sm font-medium text-slate-900">
+    {item.value}
+  </p>
+)}
+              </div>
+            </li>
+          ))}
+        </ul>
+
+        {/* Trust Badge */}
+        <div className="mt-6 flex items-start gap-3 bg-gray-50 rounded-xl p-4">
+          <span className="text-2xl">⚡</span>
+          <p className="text-xs text-slate-500 leading-relaxed">
+            <strong className="text-slate-900 font-semibold">Average response time:</strong> Under 2 hours during business hours (9 AM - 6 PM IST)
+          </p>
         </div>
+      </motion.div>
+
+    </div>
+
+  </div>
+
+  <style>{`
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, -30px) scale(1.05); }
+    }
+  `}</style>
+</div>
 
         {/* ── FOOTER ── */}
         <div className="bg-slate-950 text-white px-10 py-12 mt-2">
