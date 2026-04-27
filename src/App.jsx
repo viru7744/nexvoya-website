@@ -576,8 +576,8 @@ function App() {
         {/* Contact Items */}
         <ul className="space-y-0 divide-y divide-gray-100">
           {[
-            { icon: "💬", label: "WhatsApp", value: "+91 9754352051", link: "https://wa.me/919754352051", gradient: "from-green-100 to-emerald-100", iconColor: "text-green-700" },
-            { icon: "📞", label: "Phone", value: "+91 9754352051", link: "tel:+919754352051", gradient: "from-blue-100 to-cyan-100", iconColor: "text-blue-700" },
+            { icon: "💬", label: "WhatsApp", value: "xxxxxxxxxx", link: "https://wa.me/919754352051", gradient: "from-green-100 to-emerald-100", iconColor: "text-green-700" },
+            { icon: "📞", label: "Phone", value: "xxxxxxxxx", link: "tel:xxxxxxxxx", gradient: "from-blue-100 to-cyan-100", iconColor: "text-blue-700" },
             { icon: "✉️", label: "Email", value: "hello@nexvoya.com", link: "mailto:hello@nexvoya.com", gradient: "from-yellow-100 to-orange-100", iconColor: "text-yellow-800" },
             { icon: "🌍", label: "Address", value: "Working remotely worldwide", link: null, gradient: "from-purple-100 to-pink-100", iconColor: "text-purple-700" },
           ].map((item, i) => (
