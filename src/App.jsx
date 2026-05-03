@@ -3,8 +3,23 @@ import logo from "./assets/logo.png";
 import { motion } from "framer-motion";
 import { FaLinkedin, FaInstagram, FaFacebook } from "react-icons/fa";
 import NexvoyaFlow from "./assets/NexvoyaFlow";
+import TypingText from "./TypingText";
+import { useState } from "react";
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+
+const services = [
+  "System Integration",
+  "Medical Coding",
+  "Clinical SAS",
+  "Cloud Computing",
+  "Staff Augmentation",
+  "Mobile App Development",
+  "ERP Solutions",
+  "Quality Assurance",
+  "Web Development"
+];
   return (
     <div className="relative text-black min-h-screen bg-[#f8fafc]">
 
@@ -14,129 +29,180 @@ function App() {
       <div className="relative z-10">
 
         {/* ── NAVBAR ── */}
-        <nav className="flex justify-between items-center px-10 py-5">
-          <div className="flex items-center gap-3">
-            <img src={logo} className="w-10 h-10" alt="Nexvoya logo" />
-            <h2 className="text-xl font-bold">Nexvoya</h2>
-          </div>
-          <div className="hidden md:flex space-x-8 items-center text-sm font-medium">
-            <a href="#" className="hover:text-blue-600 transition">Services</a>
-            <a href="#" className="hover:text-blue-600 transition">About Us</a>
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full transition shadow-md shadow-blue-200">
-              Contact Us
-            </button>
-          </div>
-        </nav>
+       <nav className="flex items-center justify-between px-10 py-5">
 
-        {/* ── HERO ── */}
-        <div className="relative text-center mt-10 px-6 py-16 overflow-hidden">
+  {/* LEFT: Logo + Name */}
+  <div className="flex items-center gap-3">
+    <img src={logo} className="w-14 h-14 object-contain" alt="Nexvoya logo" />
+    <h2 className="text-2xl font-bold">Nexvoya</h2>
+  </div>
 
-          {/* Radial glow */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-blue-500/10 blur-[100px] rounded-full pointer-events-none" />
+  {/* CENTER: Typing Text */}
+  <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2">
+    <TypingText />
+  </div>
 
-          {/* Top badge */}
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 rounded-full px-4 py-1.5 text-xs font-semibold text-blue-600 mb-6"
-          >
-            <span className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse" />
-            GLOBAL STAFF AUGMENTATION PLATFORM
-          </motion.div>
+  {/* RIGHT: Menu */}
+  <div className="hidden md:flex space-x-8 items-center text-sm font-medium">
+    <div
+  className="relative"
+  onMouseEnter={() => setIsOpen(true)}
+  onMouseLeave={() => setIsOpen(false)}
+>
+  <div className="cursor-pointer hover:text-blue-600 transition">
+    Services 
+  </div>
 
-          {/* Heading */}
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-6xl font-black tracking-tight text-slate-900 leading-tight"
-          >
-            Hire{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent">
-              World-Class
-            </span>{" "}
-            IT Talent.<br />
-            Build Faster. Scale Smarter.
-          </motion.h1>
-
-          {/* Subtext */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.25 }}
-            className="mt-5 text-slate-500 text-lg max-w-xl mx-auto leading-relaxed"
-          >
-            From individual developers to full dedicated teams —<br className="hidden md:block" />
-            matched by AI, delivered in <strong className="text-slate-700">48 hours</strong>.
-          </motion.p>
-
-          {/* Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.35 }}
-            className="mt-8 flex justify-center gap-4 flex-wrap"
-          >
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-7 py-3 rounded-xl font-semibold shadow-lg shadow-blue-200 transition-all hover:-translate-y-0.5">
-              Get Dedicated Team →
-            </button>
-            <button className="bg-white border-2 border-slate-200 hover:border-blue-300 text-slate-800 px-7 py-3 rounded-xl font-semibold transition-all hover:-translate-y-0.5">
-              Book Free Consultation
-            </button>
-          </motion.div>
-
-          {/* Trust bar */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-10 flex items-center justify-center gap-3 flex-wrap"
-          >
-            <div className="flex">
-              {[
-                { initials: "AR", color: "#4f6ef7" },
-                { initials: "SK", color: "#a78bfa" },
-                { initials: "MJ", color: "#06b6d4" },
-                { initials: "PK", color: "#10b981" },
-                { initials: "+",  color: "#f59e0b" },
-              ].map((av, i) => (
-                <div
-                  key={i}
-                  className="w-8 h-8 rounded-full border-2 border-white -ml-2 first:ml-0 flex items-center justify-center text-white text-xs font-bold"
-                  style={{ background: av.color }}
-                >
-                  {av.initials}
-                </div>
-              ))}
-            </div>
-            <span className="text-sm text-slate-500">
-              Trusted by <strong className="text-slate-700">200+</strong> companies worldwide
-            </span>
-          </motion.div>
-
-          {/* Floating stat chips — visible on large screens */}
-          {[
-            { icon: "🌍", num: "40+",   label: "Countries Served",   pos: "left-6 top-10"    },
-            { icon: "⚡", num: "48hr",  label: "Avg Match Time",     pos: "right-6 top-10"   },
-            { icon: "👨‍💻", num: "500+",  label: "Vetted Developers",  pos: "left-6 bottom-10" },
-            { icon: "⭐", num: "4.9/5", label: "Client Rating",      pos: "right-6 bottom-10"},
-          ].map((chip, i) => (
-            <motion.div
-              key={i}
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 4, repeat: Infinity, delay: i * 0.8, ease: "easeInOut" }}
-              className={`absolute ${chip.pos} hidden lg:flex items-center gap-3 bg-white/90 backdrop-blur border border-blue-100 rounded-2xl px-4 py-3 shadow-lg`}
-            >
-              <span className="text-2xl">{chip.icon}</span>
-              <div>
-                <div className="text-base font-bold text-slate-900">{chip.num}</div>
-                <div className="text-xs text-slate-400 font-medium">{chip.label}</div>
-              </div>
-            </motion.div>
-          ))}
+  {isOpen && (
+    <div className="absolute top-8 left-0 bg-white shadow-xl w-64 p-4 z-50 rounded-lg">
+      {services.map((service, index) => (
+        <div
+          key={index}
+          className="p-2 hover:bg-gray-100 cursor-pointer rounded"
+        >
+          {service}
         </div>
+      ))}
+    </div>
+  )}
+</div>
+    <a href="#" className="hover:text-blue-600 transition">About Us</a>
+    <button className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full transition shadow-md shadow-blue-200">
+      Contact Us
+    </button>
+  </div>
 
+</nav>
+
+{/* ── HERO WITH VIDEO BACKGROUND ── */}
+<div className="relative text-center mt-10 px-6 py-16 overflow-hidden min-h-screen flex items-center justify-center">
+
+  {/* 🎥 VIDEO BACKGROUND */}
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="absolute top-0 left-0 w-full h-full object-cover z-0"
+  >
+     <source src="/big.mp4" type="video/mp4" />
+  </video>
+
+  
+
+  {/* Dark overlay */}
+  <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-10"></div>
+
+  {/* 🌟 CONTENT */}
+  <div className="relative z-20 text-white max-w-5xl">
+
+    {/* Typing Text */}
+   
+
+    {/* Badge */}
+    <motion.div
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5 text-xs font-semibold mb-6"
+    >
+      <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse" />
+      GLOBAL STAFF AUGMENTATION PLATFORM
+    </motion.div>
+
+    {/* Heading */}
+    <motion.h1
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.1 }}
+      className="text-4xl md:text-6xl font-black tracking-tight leading-tight mb-6"
+    >
+      Hire{" "}
+      <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+        World-Class
+      </span>{" "}
+      IT Talent.<br />
+      Build Faster. Scale Smarter.
+    </motion.h1>
+
+    {/* Subtext */}
+    <motion.p
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6, delay: 0.25 }}
+      className="text-gray-200 text-lg max-w-2xl mx-auto leading-relaxed mb-8"
+    >
+      From individual developers to full dedicated teams —
+      matched by AI, delivered in <strong className="text-white">48 hours</strong>.
+    </motion.p>
+
+    {/* Buttons */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.35 }}
+      className="flex justify-center gap-4 flex-wrap"
+    >
+      <button className="bg-blue-600 hover:bg-blue-700 text-white px-7 py-3 rounded-xl font-semibold shadow-lg shadow-blue-900/30 transition-all hover:-translate-y-1">
+        Get Dedicated Team →
+      </button>
+      <button className="bg-white/10 backdrop-blur-md border border-white/30 text-white px-7 py-3 rounded-xl font-semibold transition-all hover:-translate-y-1 hover:bg-white/20">
+        Book Free Consultation
+      </button>
+    </motion.div>
+
+    {/* Trust bar */}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6, delay: 0.5 }}
+      className="mt-10 flex items-center justify-center gap-3 flex-wrap"
+    >
+      <div className="flex">
+        {[
+          // { initials: "AR", color: "#4f6ef7" },
+          // { initials: "SK", color: "#a78bfa" },
+          // { initials: "MJ", color: "#06b6d4" },
+          // { initials: "PK", color: "#10b981" },
+          // { initials: "+",  color: "#f59e0b" },
+        ].map((av, i) => (
+          <div
+            key={i}
+            className="w-8 h-8 rounded-full border-2 border-white -ml-2 first:ml-0 flex items-center justify-center text-white text-xs font-bold"
+            style={{ background: av.color }}
+          >
+            {av.initials}
+          </div>
+        ))}
+      </div>
+      {/* <span className="text-sm text-gray-200">
+        Trusted by <strong className="text-white">50+</strong> companies worldwide
+      </span> */}
+    </motion.div>
+
+  </div>
+
+  {/* Floating stat chips */}
+  {[
+    { icon: "🌍", num: "40+",   label: "Countries Served",   pos: "left-6 top-32"    },
+    { icon: "⚡", num: "48hr",  label: "Avg Match Time",     pos: "right-6 top-32"   },
+    { icon: "👨‍💻", num: "100+",  label: "Vetted Developers",  pos: "left-6 bottom-32" },
+    { icon: "⭐", num: "4.9/5", label: "Client Rating",      pos: "right-6 bottom-32"},
+  ].map((chip, i) => (
+    <motion.div
+      key={i}
+      animate={{ y: [0, -8, 0] }}
+      transition={{ duration: 4, repeat: Infinity, delay: i * 0.8, ease: "easeInOut" }}
+      className={`absolute ${chip.pos} hidden lg:flex items-center gap-3 bg-white/90 backdrop-blur border border-blue-100 rounded-2xl px-4 py-3 shadow-lg z-30`}
+    >
+      <span className="text-2xl">{chip.icon}</span>
+      <div>
+        <div className="text-base font-bold text-slate-900">{chip.num}</div>
+        <div className="text-xs text-slate-400 font-medium">{chip.label}</div>
+      </div>
+    </motion.div>
+  ))}
+</div>
         {/* ── FLOW ANIMATION ── */}
         <div className="mt-2 px-4 md:px-10">
           <NexvoyaFlow />
@@ -661,12 +727,12 @@ function App() {
           </div>
           <div className="border-t border-slate-800 mt-10 pt-6 text-center text-slate-500 text-sm">
             © 2026 Nexvoya. All rights reserved.
-          </div>
-        </div>
+         </div>
+</div>
+</div>
+</div>
 
-      </div>
-    </div>
-  );
+);
 }
 
 export default App;
