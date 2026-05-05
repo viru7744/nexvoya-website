@@ -5,9 +5,12 @@ import { FaLinkedin, FaInstagram, FaFacebook } from "react-icons/fa";
 import NexvoyaFlow from "./assets/NexvoyaFlow";
 import TypingText from "./TypingText";
 import { useState } from "react";
+import StaffAugmentation from "./pages/StaffAugmentation";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
 const services = [
   "System Integration",
@@ -20,8 +23,12 @@ const services = [
   "Quality Assurance",
   "Web Development"
 ];
-  return (
-    <div className="relative text-black min-h-screen bg-[#f8fafc]">
+ return (
+  <Routes>
+
+    <Route path="/" element={
+
+      <div className="relative text-black min-h-screen bg-[#f8fafc]">
 
       {/* GRID */}
       <div className="absolute inset-0 bg-[linear-gradient(#e5e7eb_1px,transparent_1px),linear-gradient(90deg,#e5e7eb_1px,transparent_1px)] bg-[size:40px_40px] opacity-30 pointer-events-none" />
@@ -29,7 +36,7 @@ const services = [
       <div className="relative z-10">
 
         {/* ── NAVBAR ── */}
-       <nav className="flex items-center justify-between px-10 py-5">
+       <nav className="flex items-center justify-between px-10 py-2">
 
   {/* LEFT: Logo + Name */}
   <div className="flex items-center gap-3">
@@ -56,13 +63,18 @@ const services = [
   {isOpen && (
     <div className="absolute top-8 left-0 bg-white shadow-xl w-64 p-4 z-50 rounded-lg">
       {services.map((service, index) => (
-        <div
-          key={index}
-          className="p-2 hover:bg-gray-100 cursor-pointer rounded"
-        >
-          {service}
-        </div>
-      ))}
+  <div
+    key={index}
+    onClick={() => {
+      if (service === "Staff Augmentation") {
+        navigate("/staff-augmentation");
+      }
+    }}
+    className="p-2 hover:bg-gray-100 cursor-pointer"
+  >
+    {service}
+  </div>
+))}
     </div>
   )}
 </div>
@@ -75,7 +87,7 @@ const services = [
 </nav>
 
 {/* ── HERO WITH VIDEO BACKGROUND ── */}
-<div className="relative text-center mt-10 px-6 py-16 overflow-hidden min-h-screen flex items-center justify-center">
+<div className="relative text-center px-6 py-16 overflow-hidden min-h-screen flex items-center justify-center">
 
   {/* 🎥 VIDEO BACKGROUND */}
   <video
@@ -725,13 +737,20 @@ const services = [
               </div>
             </div>
           </div>
-          <div className="border-t border-slate-800 mt-10 pt-6 text-center text-slate-500 text-sm">
+                    <div className="border-t border-slate-800 mt-10 pt-6 text-center text-slate-500 text-sm">
             © 2026 Nexvoya. All rights reserved.
-         </div>
-</div>
-</div>
-</div>
+          </div>
+        </div>   
 
+      </div>  
+    </div>    
+
+    } />
+
+    {/* SERVICE PAGE */}
+    <Route path="/staff-augmentation" element={<StaffAugmentation />} />
+
+  </Routes>
 );
 }
 
