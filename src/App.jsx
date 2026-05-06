@@ -50,10 +50,10 @@ function App() {
 
               <div className="space-y-3">
                 {[
-                  { icon: "💬", label: "WhatsApp", value: "XXXXXXXXXX", bg: "from-green-100 to-emerald-100", color: "text-green-700" },
-                  { icon: "📞", label: "Phone", value: "XXXXXXXXXX", bg: "from-blue-100 to-cyan-100", color: "text-blue-700" },
+                  { icon: "💬", label: "WhatsApp", value: "9993634405", bg: "from-green-100 to-emerald-100", color: "text-green-700" },
+                  { icon: "📞", label: "Phone", value: "9993634405", bg: "from-blue-100 to-cyan-100", color: "text-blue-700" },
                   { icon: "✉️", label: "Email", value: "hello@nexvoya.com", bg: "from-yellow-100 to-orange-100", color: "text-yellow-800" },
-                  { icon: "🌍", label: "Address", value: "Working remotely worldwide", bg: "from-purple-100 to-pink-100", color: "text-purple-700" },
+                  { icon: "🌍", label: "Address", value: "Kolar Road Bhopal, Madhya Pradesh India ", bg: "from-purple-100 to-pink-100", color: "text-purple-700" },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-4 p-3 rounded-xl hover:bg-slate-50 transition group">
                     <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${item.bg} ${item.color} flex items-center justify-center text-xl flex-shrink-0 group-hover:scale-110 group-hover:-rotate-3 transition`}>
@@ -455,10 +455,10 @@ function App() {
                         <h3 className="text-xl font-bold text-slate-900 mb-6">Get in Touch</h3>
                         <ul className="space-y-0 divide-y divide-gray-100">
                           {[
-                            { icon: "💬", label: "WhatsApp", value: "xxxxxxxxxx", link: "https://wa.me/919754352051", gradient: "from-green-100 to-emerald-100", iconColor: "text-green-700" },
-                            { icon: "📞", label: "Phone", value: "xxxxxxxxx", link: "tel:xxxxxxxxx", gradient: "from-blue-100 to-cyan-100", iconColor: "text-blue-700" },
+                            { icon: "💬", label: "WhatsApp", value: "9993634405", link: "https://wa.me/9993634405", gradient: "from-green-100 to-emerald-100", iconColor: "text-green-700" },
+                            { icon: "📞", label: "Phone", value: "9993634405", link: "tel:xxxxxxxxx", gradient: "from-blue-100 to-cyan-100", iconColor: "text-blue-700" },
                             { icon: "✉️", label: "Email", value: "hello@nexvoya.com", link: "mailto:hello@nexvoya.com", gradient: "from-yellow-100 to-orange-100", iconColor: "text-yellow-800" },
-                            { icon: "🌍", label: "Address", value: "Working remotely worldwide", link: null, gradient: "from-purple-100 to-pink-100", iconColor: "text-purple-700" },
+                            { icon: "🌍", label: "Address", value: "Kolar Road, Bhopal Madhya Pradesh India", link: null, gradient: "from-purple-100 to-pink-100", iconColor: "text-purple-700" },
                           ].map((item, i) => (
                             <li key={i} className="flex items-start gap-4 py-4 group">
                               <div className={`flex-shrink-0 w-11 h-11 bg-gradient-to-br ${item.gradient} ${item.iconColor} rounded-xl flex items-center justify-center text-xl group-hover:scale-110 transition-transform duration-300`}>
