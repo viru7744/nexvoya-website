@@ -17,7 +17,7 @@ const TypingText = () => {
         setIndex(index + 1);
 
         if (index === text.length) {
-          setTimeout(() => setIsDeleting(true), 1000); // pause after full text
+          setTimeout(() => setIsDeleting(true), 1000);
         }
       } else {
         setDisplayText(text.slice(0, index - 1));
@@ -33,9 +33,9 @@ const TypingText = () => {
   }, [index, isDeleting]);
 
   return (
-    <span className="ml-2 text-base font-medium tracking-wide bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-600 bg-clip-text text-transparent drop-shadow-sm">
+    <span className="text-[11px] sm:text-xs md:text-sm lg:text-base font-medium tracking-wide bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-600 bg-clip-text text-transparent whitespace-nowrap">
       {displayText}
-      <span className="ml-1 text-blue-500 animate-pulse">|</span>
+      <span className="ml-0.5 text-blue-500 animate-pulse">|</span>
     </span>
   );
 };
