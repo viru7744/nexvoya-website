@@ -19,6 +19,7 @@ import design from "./assets/services/design.png";
 import product from "./assets/services/product.png";
 import About from "./pages/About";
 import Navbar from "./Navbar"; // ✅ Import new Navbar
+import Careers from "./pages/Careers";
 
 function App() {
   const [showContact, setShowContact] = useState(false);
@@ -86,6 +87,7 @@ function App() {
       {/* ✅ ROUTES */}
       <Routes>
         <Route path="/about" element={<About />} />
+        <Route path="/careers" element={<Careers />} />
 
         <Route
           path="/"
@@ -506,7 +508,11 @@ function App() {
                         <ul className="space-y-2 text-slate-500">
                           <li><Link to="/about" className="hover:text-white transition">About Us</Link></li>
                           <li><a href="#" className="hover:text-white transition">Services</a></li>
-                          <li><a href="#" className="hover:text-white transition">Careers</a></li>
+                          <li>
+  <Link to="/careers" className="hover:text-white transition">
+    Careers
+  </Link>
+</li>
                         </ul>
                       </div>
                       <div>
