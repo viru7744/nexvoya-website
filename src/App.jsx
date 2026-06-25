@@ -51,8 +51,8 @@ function App() {
 
               <div className="space-y-3">
                 {[
-                  { icon: "💬", label: "WhatsApp", value: "9993634405", bg: "from-green-100 to-emerald-100", color: "text-green-700" },
-                  { icon: "📞", label: "Phone", value: "9993634405", bg: "from-blue-100 to-cyan-100", color: "text-blue-700" },
+                  { icon: "💬", label: "WhatsApp", value: "+91-9111709269", bg: "from-green-100 to-emerald-100", color: "text-green-700" },
+                  { icon: "📞", label: "Phone", value: "+91-9111709269", bg: "from-blue-100 to-cyan-100", color: "text-blue-700" },
                   { icon: "✉️", label: "Email", value: "hello@nexvoya.com", bg: "from-yellow-100 to-orange-100", color: "text-yellow-800" },
                   { icon: "🌍", label: "Address", value: "Kolar Road Bhopal, Madhya Pradesh India ", bg: "from-purple-100 to-pink-100", color: "text-purple-700" },
                 ].map((item, i) => (
@@ -457,8 +457,8 @@ function App() {
                         <h3 className="text-xl font-bold text-slate-900 mb-6">Get in Touch</h3>
                         <ul className="space-y-0 divide-y divide-gray-100">
                           {[
-                            { icon: "💬", label: "WhatsApp", value: "9993634405", link: "https://wa.me/9993634405", gradient: "from-green-100 to-emerald-100", iconColor: "text-green-700" },
-                            { icon: "📞", label: "Phone", value: "9993634405", link: "tel:xxxxxxxxx", gradient: "from-blue-100 to-cyan-100", iconColor: "text-blue-700" },
+                            { icon: "💬", label: "WhatsApp", value: "+91-9111709269", link: "https://wa.me/+91-9111709269", gradient: "from-green-100 to-emerald-100", iconColor: "text-green-700" },
+                            { icon: "📞", label: "Phone", value: "+91-9111709269", link: , gradient: "from-blue-100 to-cyan-100", iconColor: "text-blue-700" },
                             { icon: "✉️", label: "Email", value: "hello@nexvoya.com", link: "mailto:hello@nexvoya.com", gradient: "from-yellow-100 to-orange-100", iconColor: "text-yellow-800" },
                             { icon: "🌍", label: "Address", value: "Kolar Road, Bhopal Madhya Pradesh India", link: null, gradient: "from-purple-100 to-pink-100", iconColor: "text-purple-700" },
                           ].map((item, i) => (
