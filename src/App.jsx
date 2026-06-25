@@ -458,7 +458,7 @@ function App() {
                         <ul className="space-y-0 divide-y divide-gray-100">
                           {[
                             { icon: "💬", label: "WhatsApp", value: "+91-9111709269", link: "https://wa.me/+91-9111709269", gradient: "from-green-100 to-emerald-100", iconColor: "text-green-700" },
-                            { icon: "📞", label: "Phone", value: "+91-9111709269", link: , gradient: "from-blue-100 to-cyan-100", iconColor: "text-blue-700" },
+                            { icon: "📞", label: "Phone", value: "+91-9111709269", gradient: "from-blue-100 to-cyan-100", iconColor: "text-blue-700" },
                             { icon: "✉️", label: "Email", value: "hello@nexvoya.com", link: "mailto:hello@nexvoya.com", gradient: "from-yellow-100 to-orange-100", iconColor: "text-yellow-800" },
                             { icon: "🌍", label: "Address", value: "Kolar Road, Bhopal Madhya Pradesh India", link: null, gradient: "from-purple-100 to-pink-100", iconColor: "text-purple-700" },
                           ].map((item, i) => (
