@@ -1,19 +1,23 @@
+
+
+
 import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "./assets/logo.png";
+// import logo from "./assets/logo.png";
+import logo from "./assets/nexvoya_logo_red_yellow.png";
 import TypingText from "./TypingText";
 
 const services = [
-  "System Integration",
-  "Medical Coding",
-  "Clinical SAS",
-  "Cloud Computing",
-  "Staff Augmentation",
-  "Mobile App Development",
-  "ERP Solutions",
-  "Quality Assurance",
-  "Web Development",
+  { name: "System Integration", path: "/system-integration" },
+  { name: "Medical Coding", path: "/medical-coding" },
+  { name: "Clinical SAS", path: "/clinical" },
+  { name: "Cloud Computing", path: "/cloud-computing" },
+  { name: "Staff Augmentation", path: "/staff-augmentation" },
+  { name: "Mobile App Development", path: "/mobile-app" },
+  { name: "ERP Solutions", path: "/erp-solutions" },
+  { name: "Quality Assurance", path: "/quality-assurance" },
+  { name: "Web Development", path: "/web-development" },
 ];
 
 export default function Navbar({ onContactClick }) {
@@ -55,10 +59,8 @@ export default function Navbar({ onContactClick }) {
     return () => { document.body.style.overflow = ""; };
   }, [mobileOpen]);
 
-  const handleServiceClick = (service) => {
-    if (service === "Staff Augmentation") {
-      navigate("/staff-augmentation");
-    }
+  const handleServiceClick = (path) => {
+    navigate(path);
     setServicesOpen(false);
     setMobileOpen(false);
     setMobileServicesOpen(false);
@@ -73,35 +75,34 @@ export default function Navbar({ onContactClick }) {
     <>
       {/* ── NAVBAR ── */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-white/95 backdrop-blur-md shadow-[0_1px_20px_rgba(0,0,0,0.08)] border-b border-slate-100"
-            : "bg-white/80 backdrop-blur-sm"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+            ? "bg-black shadow-[0_1px_20px_rgba(0,0,0,0.08)] border-b border-slate-100"
+            : "bg-black"
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
-          <div className="flex items-center justify-between h-14 md:h-16">
+          <div className="flex items-center justify-between h-14 md:h-16 gap-4">
 
             {/* ── LOGO ── */}
-            <Link to="/" className="flex items-center gap-2.5 flex-shrink-0">
+            <Link to="/" className="flex items-center gap-2.5 shrink-0">
               <img src={logo} className="w-9 h-9 md:w-10 md:h-10 object-contain" alt="Nexvoya" />
-              <span className="text-lg md:text-xl font-bold text-slate-900 tracking-tight">Nexvoya</span>
+              <span className="text-lg md:text-xl font-bold text-white tracking-tight">Nexvoya</span>
             </Link>
 
-            {/* ── CENTER TAGLINE (desktop only, absolutely centered) ── */}
-            <div className="hidden md:block absolute left-1/2 -translate-x-1/2 pointer-events-none max-w-sm lg:max-w-md xl:max-w-lg overflow-hidden">
+            {/* ── CENTER TAGLINE (desktop only, flex-centered, no clipping) ── */}
+            <div className="hidden lg:flex flex-1 justify-center items-center min-w-0 px-2 pointer-events-none">
               <TypingText />
             </div>
 
             {/* ── DESKTOP NAV ── */}
-            <div className="hidden md:flex items-center gap-1">
+            <div className="hidden md:flex items-center gap-1 shrink-0">
 
               {/* Services dropdown */}
               <div className="relative" ref={dropdownRef}>
                 <button
                   onClick={() => setServicesOpen((v) => !v)}
                   onMouseEnter={() => setServicesOpen(true)}
-                  className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200"
+                  className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-mist-50 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200"
                 >
                   Services
                   <svg
@@ -125,11 +126,11 @@ export default function Navbar({ onContactClick }) {
                       {services.map((service, i) => (
                         <button
                           key={i}
-                          onClick={() => handleServiceClick(service)}
+                          onClick={() => handleServiceClick(service.path)}
                           className="w-full text-left px-4 py-2.5 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-150 flex items-center gap-2"
                         >
-                          <span className="w-1.5 h-1.5 rounded-full bg-blue-200 flex-shrink-0" />
-                          {service}
+                          <span className="w-1.5 h-1.5 rounded-full bg-blue-200 shrink-0" />
+                          {service.name}
                         </button>
                       ))}
                     </motion.div>
@@ -140,7 +141,7 @@ export default function Navbar({ onContactClick }) {
               {/* About Us */}
               <Link
                 to="/about"
-                className="px-4 py-2 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200"
+                className="px-4 py-2 text-sm font-medium text-zinc-50 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200"
               >
                 About Us
               </Link>
@@ -244,10 +245,10 @@ export default function Navbar({ onContactClick }) {
                           {services.map((service, i) => (
                             <button
                               key={i}
-                              onClick={() => handleServiceClick(service)}
+                              onClick={() => handleServiceClick(service.path)}
                               className="w-full text-left px-3 py-2.5 text-sm text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
                             >
-                              {service}
+                              {service.name}
                             </button>
                           ))}
                         </div>

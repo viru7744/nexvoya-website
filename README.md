@@ -1,16 +1,115 @@
-# React + Vite
+# Nexvoya
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Nexvoya is a global staff augmentation and software development platform — connecting
+businesses with vetted IT talent and delivering end-to-end product, web, and mobile
+development services.
 
-Currently, two official plugins are available:
+This repository contains the marketing/website front end, built with **React** and **Vite**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
 
-## React Compiler
+- **React** — UI library
+- **Vite** — build tool & dev server (HMR)
+- **React Router** — client-side routing
+- **Tailwind CSS** — utility-first styling
+- **Framer Motion** — animations and transitions
+- **react-icons** — icon set (social links, etc.)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Getting Started
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Node.js 18+
+- npm (or yarn/pnpm)
+
+### Installation
+
+```bash
+npm install
+```
+
+### Development
+
+Start the local dev server with hot module replacement:
+
+```bash
+npm run dev
+```
+
+The app will be available at `http://localhost:5173` by default.
+
+### Build
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+### Preview
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## Project Structure
+
+```
+src/
+├── assets/
+│   ├── industries/       # Icons/images for the Industries section
+│   ├── services/         # Icons/images for the Services section
+│   └── NexvoyaFlow.jsx   # Flow/animation component on the homepage
+├── pages/
+│   ├── About.jsx
+│   ├── Careers.jsx
+│   ├── industries/       # Healthcare, EdTech, FinTech, Real Estate, Retail, Restaurants
+│   └── service/           # Cloud Computing, ERP, Mobile App, etc.
+├── Navbar.jsx
+├── App.jsx                # Main app shell, homepage sections, contact modal
+├── main.jsx                # Router setup — all page routes registered here
+└── index.css               # Tailwind base + global styles / font imports
+```
+
+## Routing
+
+All routes are registered in `main.jsx` using `react-router-dom`. Key routes:
+
+| Path                  | Page              |
+|-----------------------|-------------------|
+| `/`                   | Home              |
+| `/about`              | About             |
+| `/careers`            | Careers           |
+| `/staff-augmentation` | Staff Augmentation |
+| `/cloud-computing`    | Cloud Computing service |
+| `/mobile-app`         | Mobile App service |
+| `/erp-solutions`      | ERP Solutions service |
+| `/healthcare`         | Healthcare industry |
+| `/edtech`             | EdTech industry |
+| `/fintech`            | FinTech industry |
+| `/real-estate`        | Real Estate industry |
+| `/retail`             | Retail industry |
+| `/restaurants`        | Restaurants industry |
+
+Each service/industry page includes its own **Back** button (`useNavigate` /
+`window.history.back()`) to return to the previous page.
+
+## Styling Notes
+
+- Font imports (Google Fonts) should be added once in `index.css` rather than duplicated
+  inside individual component `<style>` blocks — this avoids false-positive "unknown at
+  rule" warnings from editor CSS linting and prevents redundant network requests.
+- Pages under `pages/service/` and `pages/industries/` each use a distinct color palette,
+  type pairing, and signature visual element to keep them from feeling like copies of one
+  template.
+
+## Contact / Lead Capture
+
+The homepage includes a contact modal (`showContact` state in `App.jsx`) triggered from
+multiple CTAs across the site: hero buttons, the "Book a Call" footer link, and section CTAs.
+
+## License
+
+Proprietary — © 2026 Nexvoya. All rights reserved.
