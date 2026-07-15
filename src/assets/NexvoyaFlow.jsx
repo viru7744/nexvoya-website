@@ -282,122 +282,254 @@ export default function NexvoyaFlow() {
 
   // ─── JSX ────────────────────────────────────────────────────────────────
   return (
+    // <div
+    //   ref={rootRef}
+    //   className="relative w-full overflow-hidden rounded-3xl"
+    //   style={{
+    //     height: 500,
+    //     background: "linear-gradient(135deg,#eef3ff 0%,#f5f7ff 60%,#eaf0ff 100%)",
+    //     backgroundImage: `
+    //       linear-gradient(135deg,#eef3ff 0%,#f5f7ff 60%,#eaf0ff 100%),
+    //       linear-gradient(rgba(99,130,255,.07) 1px,transparent 1px),
+    //       linear-gradient(90deg,rgba(99,130,255,.07) 1px,transparent 1px)
+    //     `,
+    //   }}
+    // >
+    //   {/* Grid overlay */}
+    //   <div
+    //     className="absolute inset-0 rounded-3xl pointer-events-none"
+    //     style={{
+    //       backgroundImage:
+    //         "linear-gradient(rgba(99,130,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(99,130,255,.07) 1px,transparent 1px)",
+    //       backgroundSize: "40px 40px",
+    //     }}
+    //   />
+
+    //   {/* Canvas */}
+    //   <canvas ref={canvasRef} className="absolute inset-0" />
+
+    //   {/* ── CLIENT CARD (top-left) ── */}
+    //   <div
+    //     className="absolute top-5 left-5 rounded-2xl px-4 py-3 z-10 pointer-events-none"
+    //     style={{
+    //       background: "rgba(255,255,255,0.92)",
+    //       backdropFilter: "blur(10px)",
+    //       border: "1px solid rgba(99,130,255,.18)",
+    //       boxShadow: "0 4px 20px rgba(80,110,240,.1)",
+    //       minWidth: 170,
+    //     }}
+    //   >
+    //     <p style={{ fontSize: 11, color: "#7c8fcc", fontWeight: 600, marginBottom: 4 }}>
+    //       CLIENT REQUEST
+    //     </p>
+    //     <p style={{ fontSize: 14, color: "#1e3a8a", fontWeight: 700 }}>
+    //       {scenario.client}
+    //     </p>
+    //     <div className="flex items-center gap-2 mt-1">
+    //       <span
+    //         className="rounded-full"
+    //         style={{ width: 7, height: 7, background: "#4f6ef7", animation: "blink 1.4s ease-in-out infinite", display:"inline-block" }}
+    //       />
+    //       <span style={{ fontSize: 12, color: "#4f6ef7", fontWeight: 500 }}>
+    //         {scenario.req}
+    //       </span>
+    //     </div>
+    //   </div>
+
+    //   {/* ── MATCHED TALENT CARD (top-right) ── */}
+    //   <div
+    //     className="absolute top-5 right-5 rounded-2xl px-4 py-3 z-10 pointer-events-none"
+    //     style={{
+    //       background: "rgba(255,255,255,0.92)",
+    //       backdropFilter: "blur(10px)",
+    //       border: "1px solid rgba(99,130,255,.18)",
+    //       boxShadow: "0 4px 20px rgba(80,110,240,.1)",
+    //       minWidth: 200,
+    //     }}
+    //   >
+    //     <p style={{ fontSize: 11, color: "#7c8fcc", fontWeight: 600, marginBottom: 8 }}>
+    //       MATCHED TALENT
+    //     </p>
+    //     {scenario.devs.map((d, i) => (
+    //       <div key={i} className="flex items-center gap-2 mb-2">
+    //         <div
+    //           className="flex items-center justify-center rounded-full text-white shrink-0"
+    //           style={{ width: 28, height: 28, background: d.color, fontSize: 10, fontWeight: 700 }}
+    //         >
+    //           {d.name.slice(0, 2)}
+    //         </div>
+    //         <div className="flex-1">
+    //           <p style={{ fontSize: 12, fontWeight: 600, color: "#1e3a8a" }}>{d.name}</p>
+    //           <p style={{ fontSize: 11, color: "#7c8fcc" }}>{d.skill}</p>
+    //         </div>
+    //         <span
+    //           className="rounded-full px-2 py-0.5"
+    //           style={{ fontSize: 10, fontWeight: 700, background: "#ecfdf5", color: "#059669", border: "1px solid #6ee7b7" }}
+    //         >
+    //           {d.match}%
+    //         </span>
+    //       </div>
+    //     ))}
+    //   </div>
+
+    //   {/* ── STATUS PILL (bottom-center) ── */}
+    //   <div
+    //     className="absolute bottom-5 left-1/2 flex items-center gap-2 rounded-full px-5 py-2 z-10 pointer-events-none"
+    //     style={{
+    //       transform: "translateX(-50%)",
+    //       background: "rgba(255,255,255,0.88)",
+    //       backdropFilter: "blur(8px)",
+    //       border: "1px solid rgba(34,197,94,.25)",
+    //       fontSize: 13,
+    //       fontWeight: 600,
+    //       color: "#059669",
+    //       whiteSpace: "nowrap",
+    //     }}
+    //   >
+    //     <span
+    //       className="rounded-full"
+    //       style={{ width: 8, height: 8, background: "#22c55e", animation: "pd 1.6s ease-in-out infinite", display:"inline-block" }}
+    //     />
+    //     {statusText}
+    //   </div>
+
+    //   {/* Keyframes injected once */}
+    //   <style>{`
+    //     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
+    //     @keyframes pd    { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.3;transform:scale(.55)} }
+    //   `}</style>
+    // </div>
+
     <div
-      ref={rootRef}
-      className="relative w-full overflow-hidden rounded-3xl"
-      style={{
-        height: 500,
-        background: "linear-gradient(135deg,#eef3ff 0%,#f5f7ff 60%,#eaf0ff 100%)",
-        backgroundImage: `
-          linear-gradient(135deg,#eef3ff 0%,#f5f7ff 60%,#eaf0ff 100%),
-          linear-gradient(rgba(99,130,255,.07) 1px,transparent 1px),
-          linear-gradient(90deg,rgba(99,130,255,.07) 1px,transparent 1px)
-        `,
-      }}
-    >
-      {/* Grid overlay */}
-      <div
-        className="absolute inset-0 rounded-3xl pointer-events-none"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(99,130,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(99,130,255,.07) 1px,transparent 1px)",
-          backgroundSize: "40px 40px",
-        }}
+  ref={rootRef}
+  className="relative w-full overflow-hidden rounded-3xl"
+  style={{
+    height: 500,
+    background: "linear-gradient(135deg,#050508 0%,#0a0a12 60%,#07070d 100%)",
+  }}
+>
+  {/* Grid overlay */}
+  <div
+    className="absolute inset-0 rounded-3xl pointer-events-none"
+    style={{
+      backgroundImage:
+        "linear-gradient(rgba(99,130,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(99,130,255,.08) 1px,transparent 1px)",
+      backgroundSize: "40px 40px",
+    }}
+  />
+
+  {/* Ambient glow blobs */}
+  <div
+    className="absolute pointer-events-none"
+    style={{
+      width: 300, height: 300, top: -100, left: -60,
+      background: "radial-gradient(circle, rgba(79,110,247,0.15) 0%, transparent 70%)",
+      filter: "blur(40px)",
+    }}
+  />
+  <div
+    className="absolute pointer-events-none"
+    style={{
+      width: 260, height: 260, bottom: -80, right: -60,
+      background: "radial-gradient(circle, rgba(167,139,250,0.15) 0%, transparent 70%)",
+      filter: "blur(40px)",
+    }}
+  />
+
+  {/* Canvas */}
+  <canvas ref={canvasRef} className="absolute inset-0" />
+
+  {/* ── CLIENT CARD (top-left) ── */}
+  <div
+    className="absolute top-5 left-5 rounded-2xl px-4 py-3 z-10 pointer-events-none"
+    style={{
+      background: "rgba(20,22,34,0.85)",
+      backdropFilter: "blur(10px)",
+      border: "1px solid rgba(99,130,255,.25)",
+      boxShadow: "0 4px 24px rgba(0,0,0,.4)",
+      minWidth: 170,
+    }}
+  >
+    <p style={{ fontSize: 11, color: "#7c8fdb", fontWeight: 600, marginBottom: 4, letterSpacing: 0.5 }}>
+      CLIENT REQUEST
+    </p>
+    <p style={{ fontSize: 14, color: "#eef1ff", fontWeight: 700 }}>
+      {scenario.client}
+    </p>
+    <div className="flex items-center gap-2 mt-1">
+      <span
+        className="rounded-full"
+        style={{ width: 7, height: 7, background: "#6b8bff", animation: "blink 1.4s ease-in-out infinite", display: "inline-block" }}
       />
-
-      {/* Canvas */}
-      <canvas ref={canvasRef} className="absolute inset-0" />
-
-      {/* ── CLIENT CARD (top-left) ── */}
-      <div
-        className="absolute top-5 left-5 rounded-2xl px-4 py-3 z-10 pointer-events-none"
-        style={{
-          background: "rgba(255,255,255,0.92)",
-          backdropFilter: "blur(10px)",
-          border: "1px solid rgba(99,130,255,.18)",
-          boxShadow: "0 4px 20px rgba(80,110,240,.1)",
-          minWidth: 170,
-        }}
-      >
-        <p style={{ fontSize: 11, color: "#7c8fcc", fontWeight: 600, marginBottom: 4 }}>
-          CLIENT REQUEST
-        </p>
-        <p style={{ fontSize: 14, color: "#1e3a8a", fontWeight: 700 }}>
-          {scenario.client}
-        </p>
-        <div className="flex items-center gap-2 mt-1">
-          <span
-            className="rounded-full"
-            style={{ width: 7, height: 7, background: "#4f6ef7", animation: "blink 1.4s ease-in-out infinite", display:"inline-block" }}
-          />
-          <span style={{ fontSize: 12, color: "#4f6ef7", fontWeight: 500 }}>
-            {scenario.req}
-          </span>
-        </div>
-      </div>
-
-      {/* ── MATCHED TALENT CARD (top-right) ── */}
-      <div
-        className="absolute top-5 right-5 rounded-2xl px-4 py-3 z-10 pointer-events-none"
-        style={{
-          background: "rgba(255,255,255,0.92)",
-          backdropFilter: "blur(10px)",
-          border: "1px solid rgba(99,130,255,.18)",
-          boxShadow: "0 4px 20px rgba(80,110,240,.1)",
-          minWidth: 200,
-        }}
-      >
-        <p style={{ fontSize: 11, color: "#7c8fcc", fontWeight: 600, marginBottom: 8 }}>
-          MATCHED TALENT
-        </p>
-        {scenario.devs.map((d, i) => (
-          <div key={i} className="flex items-center gap-2 mb-2">
-            <div
-              className="flex items-center justify-center rounded-full text-white flex-shrink-0"
-              style={{ width: 28, height: 28, background: d.color, fontSize: 10, fontWeight: 700 }}
-            >
-              {d.name.slice(0, 2)}
-            </div>
-            <div className="flex-1">
-              <p style={{ fontSize: 12, fontWeight: 600, color: "#1e3a8a" }}>{d.name}</p>
-              <p style={{ fontSize: 11, color: "#7c8fcc" }}>{d.skill}</p>
-            </div>
-            <span
-              className="rounded-full px-2 py-0.5"
-              style={{ fontSize: 10, fontWeight: 700, background: "#ecfdf5", color: "#059669", border: "1px solid #6ee7b7" }}
-            >
-              {d.match}%
-            </span>
-          </div>
-        ))}
-      </div>
-
-      {/* ── STATUS PILL (bottom-center) ── */}
-      <div
-        className="absolute bottom-5 left-1/2 flex items-center gap-2 rounded-full px-5 py-2 z-10 pointer-events-none"
-        style={{
-          transform: "translateX(-50%)",
-          background: "rgba(255,255,255,0.88)",
-          backdropFilter: "blur(8px)",
-          border: "1px solid rgba(34,197,94,.25)",
-          fontSize: 13,
-          fontWeight: 600,
-          color: "#059669",
-          whiteSpace: "nowrap",
-        }}
-      >
-        <span
-          className="rounded-full"
-          style={{ width: 8, height: 8, background: "#22c55e", animation: "pd 1.6s ease-in-out infinite", display:"inline-block" }}
-        />
-        {statusText}
-      </div>
-
-      {/* Keyframes injected once */}
-      <style>{`
-        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
-        @keyframes pd    { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.3;transform:scale(.55)} }
-      `}</style>
+      <span style={{ fontSize: 12, color: "#8fa5ff", fontWeight: 500 }}>
+        {scenario.req}
+      </span>
     </div>
+  </div>
+
+  {/* ── MATCHED TALENT CARD (top-right) ── */}
+  <div
+    className="absolute top-5 right-5 rounded-2xl px-4 py-3 z-10 pointer-events-none"
+    style={{
+      background: "rgba(20,22,34,0.85)",
+      backdropFilter: "blur(10px)",
+      border: "1px solid rgba(99,130,255,.25)",
+      boxShadow: "0 4px 24px rgba(0,0,0,.4)",
+      minWidth: 200,
+    }}
+  >
+    <p style={{ fontSize: 11, color: "#7c8fdb", fontWeight: 600, marginBottom: 8, letterSpacing: 0.5 }}>
+      MATCHED TALENT
+    </p>
+    {scenario.devs.map((d, i) => (
+      <div key={i} className="flex items-center gap-2 mb-2">
+        <div
+          className="flex items-center justify-center rounded-full text-white shrink-0"
+          style={{ width: 28, height: 28, background: d.color, fontSize: 10, fontWeight: 700 }}
+        >
+          {d.name.slice(0, 2)}
+        </div>
+        <div className="flex-1">
+          <p style={{ fontSize: 12, fontWeight: 600, color: "#eef1ff" }}>{d.name}</p>
+          <p style={{ fontSize: 11, color: "#7c8fdb" }}>{d.skill}</p>
+        </div>
+        <span
+          className="rounded-full px-2 py-0.5"
+          style={{ fontSize: 10, fontWeight: 700, background: "rgba(16,185,129,.15)", color: "#34d399", border: "1px solid rgba(52,211,153,.4)" }}
+        >
+          {d.match}%
+        </span>
+      </div>
+    ))}
+  </div>
+
+  {/* ── STATUS PILL (bottom-center) ── */}
+  <div
+    className="absolute bottom-5 left-1/2 flex items-center gap-2 rounded-full px-5 py-2 z-10 pointer-events-none"
+    style={{
+      transform: "translateX(-50%)",
+      background: "rgba(20,22,34,0.85)",
+      backdropFilter: "blur(8px)",
+      border: "1px solid rgba(34,197,94,.35)",
+      fontSize: 13,
+      fontWeight: 600,
+      color: "#34d399",
+      whiteSpace: "nowrap",
+      boxShadow: "0 4px 20px rgba(0,0,0,.4)",
+    }}
+  >
+    <span
+      className="rounded-full"
+      style={{ width: 8, height: 8, background: "#22c55e", animation: "pd 1.6s ease-in-out infinite", display: "inline-block" }}
+    />
+    {statusText}
+  </div>
+
+  {/* Keyframes injected once */}
+  <style>{`
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
+    @keyframes pd    { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.3;transform:scale(.55)} }
+  `}</style>
+</div>
   );
 }
