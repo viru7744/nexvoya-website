@@ -21,7 +21,7 @@ import WebDevelopment from './pages/service/WebDevelopment.jsx'
 
 import Healthcare from './pages/industries/Healthcare.jsx'
 import EdTech from './pages/industries/EdTech.jsx'
-import FinTech from './pages/industries/FinTech.jsx'
+import FinTech from './pages/industries/Fintech.jsx'
 import RealEstate from './pages/industries/RealEstate.jsx'
 import Retail from './pages/industries/Retail.jsx'
 import Restaurants from './pages/industries/Restaurants.jsx'
